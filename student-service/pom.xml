@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    
+    <artifactId>student-service</artifactId>
+  
+
+    <parent>
+        <groupId>org.aniket</groupId>
+	    <artifactId>test-driven-development</artifactId>
+	    <version>1.0.0</version>
+    </parent>
+    
+    
+    	 <dependencyManagement>
+			    <dependencies>
+			        <!-- If you're adding this dependency explicitly you have to
+			        add it *BEFORE* the Release Train BOM-->
+			        <dependency>
+			            <groupId>org.springframework.cloud</groupId>
+			            <artifactId>spring-cloud-contract-dependencies</artifactId>
+			            <version>2.0.3.BUILD-SNAPSHOT</version>
+			            <type>pom</type>
+			            <scope>import</scope>
+			        </dependency>
+			    </dependencies>
+			</dependencyManagement>
+			<dependencies>
+			    <dependency>
+			        <groupId>org.springframework.cloud</groupId>
+			        <artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			        <scope>test</scope>
+			    </dependency>
+			</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+				 <version>2.0.0.M5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<baseClassForTests>org.aniket.ProducerCDC</baseClassForTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
