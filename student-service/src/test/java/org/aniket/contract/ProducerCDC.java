@@ -1,4 +1,4 @@
-package org.aniket;
+package org.aniket.contract;
 
 import java.util.ArrayList;
 import java.util.List;

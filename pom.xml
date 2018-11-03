@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-         <version>1.5.8.RELEASE</version>
+        <version>1.5.8.RELEASE</version>
     </parent>
     
     <!-- <modules>
@@ -27,6 +27,10 @@
     </modules> -->
     
     <dependencies>
+	    <dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter</artifactId>
+	    </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -37,103 +41,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- end::test[] --> 
-       <!-- CDC -->
-	    <dependency>
-	        <groupId>org.springframework.cloud</groupId>
-	        <artifactId>spring-cloud-starter-contract-verifier</artifactId>
-	        <scope>test</scope>
-	    </dependency>
-		
-        
-		         
+        <!-- end::test[] -->      	                
 	</dependencies>
-     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <!-- CDC -->
-            <plugin>
-	            <groupId>org.springframework.cloud</groupId>
-	            <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-	            <version>2.0.3.BUILD-SNAPSHOT</version>
-	            <!-- Don't forget about this value !! -->
-	            <extensions>true</extensions>
-	            <configuration>
-	                <!-- Provide the base class for your auto-generated tests -->
-	                <baseClassForTests>contract.ProducerCDC</baseClassForTests>
-	            </configuration>
-        	</plugin>
-        </plugins>
-    </build>
-    <repositories>
-	<repository>
-		<id>spring-snapshots</id>
-		<name>Spring Snapshots</name>
-		<url>https://repo.spring.io/snapshot</url>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
-	</repository>
-	<repository>
-		<id>spring-milestones</id>
-		<name>Spring Milestones</name>
-		<url>https://repo.spring.io/milestone</url>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-	</repository>
-	<repository>
-		<id>spring-releases</id>
-		<name>Spring Releases</name>
-		<url>https://repo.spring.io/release</url>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-	</repository>
-</repositories>
-<pluginRepositories>
-	<pluginRepository>
-		<id>spring-snapshots</id>
-		<name>Spring Snapshots</name>
-		<url>https://repo.spring.io/snapshot</url>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
-	</pluginRepository>
-	<pluginRepository>
-		<id>spring-milestones</id>
-		<name>Spring Milestones</name>
-		<url>https://repo.spring.io/milestone</url>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-	</pluginRepository>
-	<pluginRepository>
-		<id>spring-releases</id>
-		<name>Spring Releases</name>
-		<url>https://repo.spring.io/release</url>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-	</pluginRepository>
-</pluginRepositories>
-
-<!-- CDC -->
-<dependencyManagement>
-    <dependencies>
-        <!-- If you're adding this dependency explicitly you have to
-        add it *BEFORE* the Release Train BOM-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-contract-dependencies</artifactId>
-            <version>2.0.3.BUILD-SNAPSHOT</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
-
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
