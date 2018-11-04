@@ -13,7 +13,7 @@ import org.mockito.MockitoAnnotations;
 
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 
-public class ProducerCDC {
+public class ProducerCDCTest {
 	
 	 @Mock
 	 private StudentService studentService;
