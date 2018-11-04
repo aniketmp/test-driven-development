@@ -15,12 +15,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @AutoConfigureStubRunner(
 		  workOffline = true,
 		  ids = "org.aniket:student-service:+:stubs:8090")
-public class ConsumerCDC {
+public class ConsumerCDCTest {
 	
     TestRestTemplate restTemplate = new TestRestTemplate();
    
     @Test
-    public void validateStocksForAll() throws Exception {
+    public void getAllStudents() throws Exception {
     	System.out.println("Executing consumer CDC");
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(
                 "http://localhost:8090/students/1", String.class);
