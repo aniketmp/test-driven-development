@@ -34,7 +34,7 @@ public class StudentDTO {
 		return result;
 	}
 
-	/*@Override
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -51,6 +51,6 @@ public class StudentDTO {
 		if (schoolId != other.schoolId)
 			return false;
 		return true;
-	}*/
+	}
 	
 }
